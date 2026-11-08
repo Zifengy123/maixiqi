@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>老韭菜生存日记 · 归档看板</title><style>
+:root{--bg:#070b14;--card:#0e1526;--card2:#111a30;--border:#1c2942;--border2:#2a3a5c;
+--text:#dbe4f3;--text2:#8296b8;--text3:#5a6d8f;--accent:#f5484d;--gold:#f0b429;
+--cyan:#38bdf8;--purple:#a78bfa;--green:#34d399;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:14px;line-height:1.55}
+.wrap{max-width:1360px;margin:0 auto;padding:18px 20px 48px}
+header.top{background:linear-gradient(135deg,#101a30,#0c1220 60%,#160f1d);border:1px solid var(--border);
+border-radius:14px;padding:20px 24px;margin-bottom:16px;display:flex;justify-content:space-between;
+align-items:flex-start;gap:16px;flex-wrap:wrap}
+h1{font-size:22px;margin:0 0 6px;letter-spacing:1px}
+.sub{font-size:12px;color:var(--text2)}
+.sub b{color:var(--text)}
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap}
+nav.tabs a{font-size:13px;color:var(--text2);text-decoration:none;border:1px solid var(--border2);
+border-radius:20px;padding:5px 14px;transition:.15s}
+nav.tabs a:hover{border-color:var(--cyan);color:var(--cyan)}
+nav.tabs a.on{background:rgba(245,72,77,.16);border-color:rgba(245,72,77,.5);color:#ff6b5e}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;
+position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kc,var(--accent))}
+.kpi .label{font-size:12px;color:var(--text2)}
+.kpi .value{font-size:26px;font-weight:700;margin-top:4px;color:var(--kc,var(--text));font-family:"DIN Alternate",Arial,sans-serif}
+.kpi .hint{font-size:11px;color:var(--text3)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
+.grid.one{grid-template-columns:1fr}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.card h2{font-size:15px;margin:0 0 4px;font-weight:600}
+.card .desc{font-size:12px;color:var(--text2);margin:0 0 10px}
+.chart{width:100%;height:300px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--text3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--border2);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--border)}
+tr:hover td{background:var(--card2)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:"SF Mono",Menlo,monospace;font-size:12px}
+.muted{color:var(--text3)}
+.pill{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;border:1px solid var(--border2);color:var(--text2)}
+.pill.red{border-color:rgba(245,72,77,.5);color:#ff6b5e;background:rgba(245,72,77,.12)}
+.pill.green{border-color:rgba(52,211,153,.5);color:var(--green);background:rgba(52,211,153,.1)}
+.sites{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.site{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--border);
+border-radius:14px;padding:18px 20px;transition:.18s}
+.site:hover{border-color:var(--border2);transform:translateY(-2px)}
+.site h3{margin:0 0 4px;font-size:16px}
+.site p{margin:0;font-size:12px;color:var(--text2)}
+.site .row{display:flex;gap:18px;margin-top:12px}
+.site .n{font-size:20px;font-weight:700;color:var(--gold);font-family:"DIN Alternate",Arial,sans-serif}
+.site .k{font-size:11px;color:var(--text3)}
+footer{margin-top:24px;font-size:12px;color:var(--text3);text-align:center}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.sites{grid-template-columns:1fr}}
+</style>
+<script src="echarts.min.js"></script></head>
+<body><div class="wrap">
+<header class="top"><div><h1>老韭菜生存日记 · 归档看板</h1><div class="sub">公众号文章归档 · 共 <b>84</b> 篇</div></div>
+<nav class="tabs"><a href="index.html" class="">总览</a><a href="maixiqi.html" class="">麦稀奇</a><a href="nac.html" class="">NAC 图录</a><a href="sbp.html" class="">SBP 成交</a><a href="laojuici.html" class="on">老韭菜</a></nav></header>
+<div class="kpis">
+<div class="kpi" style="--kc:var(--cyan)"><div class="label">归档篇数</div><div class="value">84</div><div class="hint">已转成 Word 的公众号文章</div></div>
+<div class="kpi" style="--kc:var(--purple)"><div class="label">时间跨度</div><div class="value">2023-03 → 2026-10</div><div class="hint">首篇 → 最新</div></div>
+<div class="kpi" style="--kc:var(--gold)"><div class="label">最新一篇</div><div class="value">2026-10-11</div><div class="hint">复盘</div></div>
+<div class="kpi" style="--kc:var(--green)"><div class="label">覆盖月份</div><div class="value">28</div><div class="hint">有内容的月份</div></div>
+</div>
+<div class="grid one"><div class="card"><h2>每月归档篇数</h2>
+<p class="desc">空白月说明那段时间没更新或没归档</p><div class="chart" id="c1"></div></div></div>
+<div class="grid one"><div class="card"><h2>全部文章 <span class="pill">84 篇</span></h2>
+<p class="desc">按日期倒序，文件在 宏观&amp;行研/ 下</p>
+<div style="max-height:560px;overflow:auto"><table><thead><tr><th>日期</th><th>标题</th><th>目录</th><th>大小</th></tr></thead><tbody><tr><td class="mono">2026-10-11</td><td>复盘</td><td class="muted">周度报告</td><td class="mono muted">2.4MB</td></tr><tr><td class="mono">2026-09-20</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.3MB</td></tr><tr><td class="mono">2026-09-13</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.6MB</td></tr><tr><td class="mono">2026-09-06</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.2MB</td></tr><tr><td class="mono">2026-08-30</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.7MB</td></tr><tr><td class="mono">2026-08-16</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.9MB</td></tr><tr><td class="mono">2026-08-09</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2026-08-02</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.6MB</td></tr><tr><td class="mono">2026-07-26</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.4MB</td></tr><tr><td class="mono">2026-07-19</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2026-07-12</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.1MB</td></tr><tr><td class="mono">2026-07-05</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2026-06-14</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2026-06-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2026-05-31</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2026-05-24</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2026-05-17</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.4MB</td></tr><tr><td class="mono">2026-05-10</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.9MB</td></tr><tr><td class="mono">2026-04-26</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.5MB</td></tr><tr><td class="mono">2026-04-19</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2026-04-12</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.9MB</td></tr><tr><td class="mono">2026-04-05</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.0MB</td></tr><tr><td class="mono">2026-03-29</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.9MB</td></tr><tr><td class="mono">2026-03-22</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.7MB</td></tr><tr><td class="mono">2026-03-15</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.0MB</td></tr><tr><td class="mono">2026-03-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2026-02-08</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2026-02-01</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.7MB</td></tr><tr><td class="mono">2026-01-25</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.1MB</td></tr><tr><td class="mono">2026-01-18</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.5MB</td></tr><tr><td class="mono">2026-01-11</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.8MB</td></tr><tr><td class="mono">2025-12-21</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2025-12-14</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.1MB</td></tr><tr><td class="mono">2025-12-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.3MB</td></tr><tr><td class="mono">2025-11-30</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.5MB</td></tr><tr><td class="mono">2025-11-23</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.5MB</td></tr><tr><td class="mono">2025-11-16</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.5MB</td></tr><tr><td class="mono">2025-11-09</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.5MB</td></tr><tr><td class="mono">2025-11-02</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.5MB</td></tr><tr><td class="mono">2025-10-26</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.0MB</td></tr><tr><td class="mono">2025-10-19</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.9MB</td></tr><tr><td class="mono">2025-09-28</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.6MB</td></tr><tr><td class="mono">2025-09-21</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.0MB</td></tr><tr><td class="mono">2025-09-14</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.8MB</td></tr><tr><td class="mono">2025-09-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.4MB</td></tr><tr><td class="mono">2025-08-31</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.5MB</td></tr><tr><td class="mono">2025-08-24</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2025-08-19</td><td>周度报告</td><td class="muted">周度报告</td><td class="mono muted">2.0MB</td></tr><tr><td class="mono">2025-08-17</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.6MB</td></tr><tr><td class="mono">2025-08-10</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2025-08-10</td><td>周度报告</td><td class="muted">周度报告</td><td class="mono muted">2.3MB</td></tr><tr><td class="mono">2025-08-03</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2025-07-27</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.1MB</td></tr><tr><td class="mono">2025-07-20</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.4MB</td></tr><tr><td class="mono">2025-07-13</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2025-06-22</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.0MB</td></tr><tr><td class="mono">2025-06-15</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.7MB</td></tr><tr><td class="mono">2025-06-08</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.3MB</td></tr><tr><td class="mono">2025-06-02</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">4.0MB</td></tr><tr><td class="mono">2025-05-25</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.2MB</td></tr><tr><td class="mono">2025-05-18</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.4MB</td></tr><tr><td class="mono">2025-05-11</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.2MB</td></tr><tr><td class="mono">2025-04-20</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">3.0MB</td></tr><tr><td class="mono">2024-05-05</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">921.3KB</td></tr><tr><td class="mono">2024-04-28</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.4MB</td></tr><tr><td class="mono">2024-04-21</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">918.8KB</td></tr><tr><td class="mono">2024-04-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.2MB</td></tr><tr><td class="mono">2024-03-31</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">917.9KB</td></tr><tr><td class="mono">2024-03-24</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.7MB</td></tr><tr><td class="mono">2024-03-17</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">917.6KB</td></tr><tr><td class="mono">2024-03-10</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.4MB</td></tr><tr><td class="mono">2024-03-03</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">915.9KB</td></tr><tr><td class="mono">2024-02-25</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">915.3KB</td></tr><tr><td class="mono">2024-02-04</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">2.2MB</td></tr><tr><td class="mono">2024-01-28</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">915.3KB</td></tr><tr><td class="mono">2024-01-14</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">915.0KB</td></tr><tr><td class="mono">2024-01-07</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">918.0KB</td></tr><tr><td class="mono">2023-12-10</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.1MB</td></tr><tr><td class="mono">2023-12-03</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.1MB</td></tr><tr><td class="mono">2023-11-26</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">1.9MB</td></tr><tr><td class="mono">2023-11-19</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">913.6KB</td></tr><tr><td class="mono">2023-04-09</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">899.9KB</td></tr><tr><td class="mono">2023-03-18</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">895.3KB</td></tr><tr><td class="mono">2023-03-04</td><td>周度思考</td><td class="muted">周度报告</td><td class="mono muted">892.8KB</td></tr></tbody></table></div>
+</div></div>
+<footer>数据来自本地归档 · 生成于 2026-11-09 02:30</footer>
+</div><script>
+var c1=echarts.init(document.getElementById('c1'));
+c1.setOption({backgroundColor:'transparent',grid:{left:40,right:20,top:20,bottom:60},
+tooltip:{trigger:'axis'},xAxis:{type:'category',data:["2023-03", "2023-04", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"],axisLabel:{color:'#8296b8',rotate:60,fontSize:10},
+axisLine:{lineStyle:{color:'#2a3a5c'}}},yAxis:{type:'value',axisLabel:{color:'#8296b8'},splitLine:{lineStyle:{color:'#1c2942'}}},
+series:[{type:'bar',data:[2, 1, 2, 2, 3, 2, 5, 3, 1, 1, 3, 4, 3, 7, 4, 2, 5, 3, 3, 2, 4, 4, 4, 2, 4, 4, 3, 1],itemStyle:{color:'#34d399',borderRadius:[3,3,0,0]}}]});
+window.addEventListener('resize',function(){c1.resize();});
+</script></body></html>
