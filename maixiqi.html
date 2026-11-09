@@ -968,8 +968,7 @@ function showCar(n){
   const w=stage.clientWidth||0;
   document.getElementById('carTrack').style.transform='translateX(-'+(carIndex*w)+'px)';
   document.querySelectorAll('.car-dot').forEach((d,i)=>d.classList.toggle('active', i===carIndex));
-  const slide=document.querySelectorAll('.car-slide')[carIndex];
-  if(slide){ const pe=slide.querySelector('.car-price'); if(pe) animatePrice(pe); }
+  // 价格不做滚动动画：数据看板要的是准确值，动画期间截图/导出会拍到中间数
 }
 function animatePrice(el){
   const v=parseFloat(el.getAttribute('data-v'));
